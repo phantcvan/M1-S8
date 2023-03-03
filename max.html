@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nhập số thứ nhất <input type="number" id="n1"><br>
+    Nhập số thứ hai <input type="number" id="n2"><br>
+    Nhập số thứ ba <input type="number" id="n3"><br>
+    <input type="button" value="Kết quả" onclick="m()">
+    <span id="result"></span>
+
+    <script>
+        function m(){
+            let n1=Number(document.getElementById("n1").value);
+            let n2=Number(document.getElementById("n2").value);
+            let n3=Number(document.getElementById("n3").value);
+            let max = n1;
+            if (n2>max){
+                max = n2;
+                if (n3>max){
+                    max = n3;
+                }
+            }
+            else{
+                if (n3>max){
+                    max = n3;
+                }
+            }
+            document.getElementById('result').innerHTML=("Số lớn nhất trong 3 số " + n1 + ", "+ n2 + ", "+ n3 + " là " + max);
+        }
+    </script>
+    </body>
+</html>

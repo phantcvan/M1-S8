@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nhập năm <input type="number" id="year"><br>
+    Nhập tháng <input type="number" id="month"><br>
+    Nhập ngày <input type="number" id="day"><br>
+    <input type="button" value="Kết quả" onclick="thu()">
+    <span id="result"></span>
+
+    <script>
+        function thu() {
+            let year = Number(document.getElementById("year").value);
+            let m = Number(document.getElementById("month").value);
+            let month = m - 1;
+            let day = Number(document.getElementById("day").value);
+            let d = new Date();
+            d.setFullYear(year);
+            d.setMonth(month);
+            d.setDate(day);
+            let dayOfWeek = d.getDay();
+            // console.log(dayOfWeek);  
+            switch (dayOfWeek) {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                    document.getElementById('result').innerHTML = "Ngày " + day + "/" + m + "/" + year + " là thứ " + (dayOfWeek+1);
+                    break;
+                default:
+                    document.getElementById('result').innerHTML = "Ngày " + day + "/" + m + "/" + year + " là chủ nhật";
+                    break;
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

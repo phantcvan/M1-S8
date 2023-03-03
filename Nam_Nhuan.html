@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+Enter a year <input type="number" id="year"> <br>
+<input type="button" value="Kết quả" onclick="leapYear()">
+<span id="result"></span>
+
+<body>
+    <script>
+        function leapYear() {
+            let year = Number(document.getElementById("year").value);
+            let nhuan = false;
+            let du4 = year % 4;
+            if (du4 == 0) {
+                let du100 = year % 100;
+                if (du100 == 0) {
+                    let du400 = year % 400;
+                    if (du400 == 0) {
+                        nhuan = true;
+                    }
+                    else{
+                        nhuan = false;
+                    }
+                }
+                else {
+                    nhuan = true;
+                }
+            }
+            if (nhuan) {
+                document.getElementById('result').innerHTML = (year + " là năm nhuận");
+            } else {
+                document.getElementById('result').innerHTML = (year + " không phải là năm nhuận");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

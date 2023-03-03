@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nhập năm <input type="number" id="year">
+    Nhập tháng <input type="number" id="month"><br>
+    <input type="button" value="Kết quả" onclick="day()">
+    <span id="result"></span>
+    <script>
+        function day() {
+            let year = Number(document.getElementById("year").value);
+            let month = Number(document.getElementById("month").value);
+            switch (month) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.getElementById('result').innerHTML = "Tháng "+month+" năm " +year+" có <strong> 31 ngày</strong>";
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    document.getElementById('result').innerHTML = "Tháng "+month+" năm " +year+" có <strong> 30 ngày</strong>";
+                    break;
+                case 2:
+                    let nhuan = false;
+                    let du4 = year % 4;
+                    if (du4 == 0) {
+                        let du100 = year % 100;
+                        if (du100 == 0) {
+                            let du400 = year % 400;
+                            if (du400 == 0) {
+                                nhuan = true;
+                            }
+                        } 
+                        else {
+                            nhuan = true;
+                        }
+                    }
+                    // console.log(leapYear);
+                    if (nhuan == false) {
+                        document.getElementById('result').innerHTML = "Tháng "+month+" năm " +year+" có <strong> 28 ngày</strong>";
+                    }
+                    else {
+                        document.getElementById('result').innerHTML = "Tháng "+month+" năm " +year+" có <strong> 29 ngày</strong>";
+                    }
+                    break;
+                    default:
+                    alert("Hãy nhập tháng từ 1 đến 12")
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
