@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nhập số thứ nhất <input type="number" id="n1"><br>
+    Nhập số thứ hai <input type="number" id="n2"><br>
+    Nhập số thứ ba <input type="number" id="n3"><br>
+    <input type="button" value="Kết quả" onclick="m()">
+    <span id="result"></span>
+
+    <script>
+        function m() {
+            let n1 = Number(document.getElementById("n1").value);
+            let n2 = Number(document.getElementById("n2").value);
+            let n3 = Number(document.getElementById("n3").value);
+            let max = n1;
+            if (n2 > max) {
+                max = n2;
+                if (n3 > max) {
+                    max = n3;
+                }
+            }
+            else {
+                if (n3 > max) {
+                    max = n3;
+                }
+            }
+            /*             if (n1 == n2 && n2 == n3) {
+                            document.getElementById('result').innerHTML = ("3 số có giá trị bằng nhau");
+                        }
+                        else if (n1 == max && n2 == max) {
+                            document.getElementById('result').innerHTML = ("Max = số t1 = số t2 = " + max);
+                        }
+                        else if (n1 == max && n3 == max) {
+                            document.getElementById('result').innerHTML = ("Max = số t1 = số t3 = " + max);
+                        }
+                        else if (n2 == max && n3 == max) {
+                            document.getElementById('result').innerHTML = ("Max = số t2 = số t3 = " + max);
+                        }
+                        else {
+                            document.getElementById('result').innerHTML = ("Số lớn nhất trong 3 số là " + max); */
+
+            var tt = [n1, n2, n3];
+            var index = tt.indexOf(max);
+            console.log(index);
+            var count = 0;
+            for (var i = 0; i < tt.length; i++) {
+                if (tt[i] === max) {
+                    count++;
+                }
+            }
+            console.log(count);
+            for (let a = 0; a < tt.length; a++) {
+                if (tt[a] === max) {
+                    indexes.push(a);
+                }
+            }
+            if (count < 3 && count > 1) {
+                document.getElementById('result').innerHTML = ("có 2 số có giá trị lớn nhất và bằng nhau <br>\
+                Số lớn nhất trong 3 số là " + max + ", là số thứ " + `${ indexes.join(", ")}` );
+            }
+            else if (count = 1) {
+                document.getElementById('result').innerHTML = ("Số lớn nhất trong 3 số là " + max + ", là số thứ " + a);
+            }
+            else {
+                document.getElementById('result').innerHTML = ("3 số có giá trị bằng nhau");
+            }
+            console.log("có " + count + " số có giá trị lớn nhất và bằng nhau");
+
+        }
+
+        /* } */
+    </script>
+</body>
+
+</html>

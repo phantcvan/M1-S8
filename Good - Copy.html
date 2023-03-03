@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: right;
+            margin-right: 900px;
+        }
+    </style>
+</head>
+
+<body>
+    GOOD <input type="range" min="0" max="3" id="g" onclick="gB()"><br>
+    FAST <input type="range" min="0" max="3" id="f" onclick="fB()"><br>
+    CHEAP <input type="range" min="0" max="3" id="c" onclick="cB()">
+
+    <script>
+        let g=false;
+        let f=false;
+        let c=false;
+        function gB(){
+            g=!g;
+            if (g){
+                document.getElementById("g").value=3;
+                if(f&&c){
+                document.getElementById("f").value=0;
+                fast=false;
+                }
+            }
+            else{
+                document.getElementById("g").value=0;
+            }
+            console.log("g",g);
+        }
+
+        function fB(){
+            f=!f;
+            if (f){
+                document.getElementById("f").value=3;
+                if(g&&c){
+                document.getElementById("g").value=0;
+                g=false;
+                }
+            }
+            else{
+                document.getElementById("f").value=0;
+            }
+            console.log("f",f);
+        }
+        function cB(){
+            c=!c;
+            if (c){
+                document.getElementById("c").value=3;
+                if(f&&g){
+                document.getElementById("g").value=0;
+                g=false;
+                }
+            }
+            else{
+                document.getElementById("c").value=0;
+            }
+            console.log("c",c);
+        }
+    </script>
+    
+</body>
+
+</html>

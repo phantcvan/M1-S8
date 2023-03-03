@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>CHUYỂN ĐỔI TIỀN TỆ</h1>
+    Amount<input type="number" id="num1" />
+    From Currency
+    <select name="From" id="from">
+        <option value="VN">VND</option>
+        <option value="USD">USD</option>
+    </select>
+    To Currency
+    <select name="To" id="to">
+        <option value="VN">VND</option>
+        <option value="USD">USD</option>
+    </select>
+    <input type="button" value="Kết quả" onclick="convert()">
+    <span id="result"></span>
+    <script>
+        function convert() {
+            let a = document.getElementById("num1").value;
+            let fr=document.getElementById("from").value;
+            let to=document.getElementById("to").value;
+            if (fr==to){
+                document.getElementById('result').innerHTML = "Chọn lại";
+            }
+            else if(fr=="VN"&&to=="USD"){
+                document.getElementById('result').innerHTML = `${a/25000}$`;
+            }
+            else{
+                document.getElementById('result').innerHTML = `${a*25000}VNĐ`;
+            }
+        }
+    </script>
+</body>
+
+</html>

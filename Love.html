@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Do you love me?</h1>
+    <input style="position:relative; margin: 10px;" type="button" value="Yes" onclick="yes()">
+    <input style="position:absolute; margin:10px;" type="button" value="No" id="no" onmouseover="no()">
+
+    <script>
+
+        function yes() {
+            document.write("I LOVE YOU TOO <br>")
+            var img = document.createElement("img");
+            img.src = "https://img.freepik.com/free-photo/colorful-heart-air-balloon-shape-collection-concept-isolated-color-background-beautiful-heart-ball-event_90220-1047.jpg";
+            document.body.appendChild(img);
+        }
+
+        function no() {
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+            document.getElementById("no").style.left = x + 'px';
+            document.getElementById("no").style.top = y + 'px';
+        }
+
+    </script>
+</body>
+
+</html>

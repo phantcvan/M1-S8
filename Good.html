@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+    <input onclick="range1()" type="range" value="10" max="10" class="input" id="input1"> good <br>
+    <input onclick="range2()" type="range" value="10" max="10" class="input" id="input2"> fast <br>
+    <input onclick="range3()" type="range" value="10" max="10" class="input" id="input3"> cheap
+
+    <script>
+        function range1() {
+            //  thân hàm sẽ thực thi code 
+            let countGood = document.getElementById("input1").value;
+            let countFast = document.getElementById("input2").value;
+            let countCheap = document.getElementById("input3").value;
+            if (countGood != 0) {
+                document.getElementById("input1").value = 10;
+                if (countCheap == 10 && countFast == 10) {
+                    document.getElementById("input3").value = 0;
+                }
+            } else {
+                document.getElementById("input1").value = 0;
+            }
+        }
+        function range2() {
+            let countGood = document.getElementById("input1").value;
+            let countFast = document.getElementById("input2").value;
+            let countCheap = document.getElementById("input3").value;
+            if (countFast != 0) {
+                document.getElementById("input2").value = 10;
+                if (countCheap == 10 && countGood == 10) {
+                    document.getElementById("input1").value = 0;
+                }
+            } else {
+                document.getElementById("input2").value = 0;
+            }
+        } 
+        function range3() {
+            let countGood = document.getElementById("input1").value;
+            let countFast = document.getElementById("input2").value;
+            let countCheap = document.getElementById("input3").value;
+            if (countCheap != 0) {
+                document.getElementById("input3").value = 10;
+                if (countGood == 10 && countFast == 10) {
+                    document.getElementById("input2").value = 0;
+                }
+            } else {
+                document.getElementById("input3").value = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>
